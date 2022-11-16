@@ -1,0 +1,48 @@
+\iftudinh@comments
+    \newcommand{\mynote}[2]{\fbox{\bfseries\sffamily\scriptsize{#1}} {\small\textsf{\emph{#2}}}}
+\else
+    \newcommand{\mynote}[2]{}
+\fi
+
+\PassOptionsToPackage{hyphens}{url}
+\expandafter\def\csname ver@breakurl.sty\endcsname{}  % prevent loading of breakurl
+\RequirePackage{graphicx}
+\RequirePackage{amsmath}
+\RequirePackage{tabularx}
+\RequirePackage{caption}
+\RequirePackage{booktabs}
+\RequirePackage{color}
+\RequirePackage{xcolor}
+\RequirePackage{colortbl}
+\RequirePackage{algpseudocode}
+\RequirePackage{algorithm}
+\RequirePackage{listings}
+\RequirePackage{moresize}
+
+\colorlet{tblheading}{gray!40}
+\colorlet{textred}{red!70!black}
+\colorlet{textgreen}{green!70!black}
+\colorlet{textblue}{blue!70!black}
+\colorlet{textcyan}{cyan!80!black}
+\colorlet{textmagenta}{magenta!80!black}
+\colorlet{textyellow}{yellow!80!black}
+
+\algrenewcommand\algorithmicindent{1em}%
+% New definitions
+\algnewcommand\algorithmicswitch{\textbf{switch}}
+\algnewcommand\algorithmiccase{\textbf{case}}
+\algnewcommand\algorithmicotherwise{\textbf{otherwise}}
+\algnewcommand\algorithmicassert{\texttt{assert}}
+\algnewcommand\Assert[1]{\State \algorithmicassert(#1)}%
+% New "environments"
+\algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\algorithmicswitch\ #1\ \algorithmicdo}{\algorithmicend\ \algorithmicswitch}%
+\algdef{SE}[CASE]{Case}{EndCase}[1]{\algorithmiccase\ #1}{\algorithmicend\ \algorithmiccase}%
+\algdef{SE}[OTHERWISE]{Otherwise}{EndOtherwise}[0]{\algorithmicotherwise}{\algorithmicend\ \algorithmicotherwise}%
+\algtext*{EndCase}%
+\algtext*{EndOtherwise}%
+
+\iftudinh@shortalg
+    \algtext*{EndSwitch}%
+    \algtext*{EndIf}%
+    \algtext*{EndFunction}%
+\fi

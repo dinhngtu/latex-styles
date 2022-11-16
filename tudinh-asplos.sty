@@ -1,0 +1,24 @@
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{family=tudinh,prefix=tudinh@}
+\DeclareBoolOption{comments}
+\DeclareBoolOption{shortalg}
+\DeclareBoolOption{biblatex}
+\DeclareStringOption[bib.bib]{bib}
+\ProcessKeyvalOptions*
+
+\RequirePackage{tudinh-base}
+
+\iftudinh@biblatex
+    \RequirePackage[sorting=none,style=trad-plain,maxcitenames=999,sortcites=true]{biblatex}
+    %\usepackage[sorting=none,style=numeric-comp]{biblatex}
+    \addbibresource{\tudinh@bib}
+\else
+    \newcommand{\printbibliography}[0]{\bibliographystyle{plain}\bibliography{\tudinh@bib}}
+\fi
+
+\RequirePackage{flushend}
+\RequirePackage{microtype}
+\microtypecontext{spacing=nonfrench}
+\RequirePackage[normalem]{ulem}
+
+%\bibliographystyle{plain}
