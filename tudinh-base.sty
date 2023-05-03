@@ -18,6 +18,16 @@
 \RequirePackage{algorithm}
 \RequirePackage{listings}
 \RequirePackage{moresize}
+\RequirePackage{hyperref}
+
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=3pt,
+}
+\lstset{style=mystyle}
 
 \colorlet{tblheading}{gray!40}
 \colorlet{textred}{red!70!black}
@@ -26,6 +36,14 @@
 \colorlet{textcyan}{cyan!80!black}
 \colorlet{textmagenta}{magenta!80!black}
 \colorlet{textyellow}{yellow!80!black}
+
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Section}
+\def\subsubsectionautorefname{Section}
+
+\newcommand{\Bslash}[0]{\discretionary{/}{}{/}}
+\newcommand{\Bdash}[0]{\discretionary{-}{}{-}}
+\newcommand{\Bunder}[0]{\discretionary{\_}{}{\_}}
 
 \algrenewcommand\algorithmicindent{1em}%
 % New definitions

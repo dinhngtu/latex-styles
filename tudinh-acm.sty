@@ -2,14 +2,16 @@
 \SetupKeyvalOptions{family=tudinh,prefix=tudinh@}
 \DeclareBoolOption{comments}
 \DeclareBoolOption{shortalg}
+\DeclareBoolOption{biblatex}
+\DeclareStringOption[bib.bib]{bib}
 \ProcessKeyvalOptions*
 
 \RequirePackage{tudinh-base}
+
+\newcommand{\printbibliography}[0]{\bibliographystyle{ACM-Reference-Format}\bibliography{\tudinh@bib}}
 
 \expandafter\def\csname ver@breakurl.sty\endcsname{}  % prevent loading of breakurl
 \RequirePackage[inline,shortlabels]{enumitem}
 \RequirePackage{flushend}
 \RequirePackage{microtype}
 \microtypecontext{spacing=nonfrench}
-
-\bibliographystyle{ACM-Reference-Format}

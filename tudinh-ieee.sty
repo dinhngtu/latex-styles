@@ -2,11 +2,15 @@
 \SetupKeyvalOptions{family=tudinh,prefix=tudinh@}
 \DeclareBoolOption{comments}
 \DeclareBoolOption{shortalg}
+\DeclareBoolOption{biblatex}
+\DeclareStringOption[bib.bib]{bib}
 \ProcessKeyvalOptions*
 
 \RequirePackage{tudinh-base}
 
 \newcommand{\fakepara}[1]{~\\\textbf{#1}}
+
+\newcommand{\printbibliography}[0]{\bibliographystyle{IEEEtran}\bibliography{\tudinh@bib}}
 
 % biography hax
 \newcommand{\biographynoskip}{\vskip -6\baselineskip plus -1fil}
@@ -26,5 +30,3 @@
   % normal IEEE
   \usepackage{cite}
 \fi
-
-\bibliographystyle{IEEEtran}
