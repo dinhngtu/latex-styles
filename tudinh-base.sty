@@ -54,7 +54,9 @@
 \algnewcommand\algorithmiccase{\textbf{case}}
 \algnewcommand\algorithmicotherwise{\textbf{otherwise}}
 \algnewcommand\algorithmicassert{\texttt{assert}}
+\algnewcommand\algorithmicbreak{\textbf{break}}
 \algnewcommand\Assert[1]{\State \algorithmicassert(#1)}%
+\algnewcommand\Break[0]{\State \algorithmicbreak}%
 % New "environments"
 \algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\algorithmicswitch\ #1\ \algorithmicdo}{\algorithmicend\ \algorithmicswitch}%
 \algdef{SE}[CASE]{Case}{EndCase}[1]{\algorithmiccase\ #1}{\algorithmicend\ \algorithmiccase}%
@@ -71,6 +73,7 @@
     \algtext*{EndFunction}%
 \fi
 
+% 1 in = 72pt
 % The figure width calculation is equal to (based on our empirical formula):
 % Figure width (in \columnwidth) = base PDF width (in inches) / base text size (in pt.) * 9/5
 % 5.5556in figure makes x == 1 => base width division == 400pt
