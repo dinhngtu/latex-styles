@@ -20,6 +20,8 @@
 \RequirePackage{moresize}
 \RequirePackage{hyperref}
 \RequirePackage{calc}
+\RequirePackage{pifont}
+\RequirePackage{xspace}
 
 \lstdefinestyle{mystyle}{
     basicstyle=\ttfamily\footnotesize,
@@ -76,3 +78,5 @@
     \setlength{\tudinhfigurewidth}{\tudinhimagewidth * \ratio{\columnwidth}{#1}}%
     \includegraphics[width=\tudinhfigurewidth]{#2}
 }
+
+\newcommand{\myref}[2][]{\hyperref[#1]{#2 \ref*{#1}}}
