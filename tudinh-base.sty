@@ -79,9 +79,11 @@
 % The figure width calculation is equal to (based on our empirical formula):
 % Figure width (in \columnwidth) = base PDF width (in inches) / base text size (in pt.) * 9/5
 % 5.5556in figure makes x == 1 => base width division == 400pt
+\newlength{\tudinhbasewidth}
+\setlength{\tudinhbasewidth}{400pt}
 \newlength{\tudinhimagewidth}
 \newlength{\tudinhfigurewidth}
-\newcommand{\autoincludegraphics}[2][400pt]{%
+\newcommand{\autoincludegraphics}[2][\tudinhbasewidth]{%
     \settowidth{\tudinhimagewidth}{\includegraphics{#2}}%
     \setlength{\tudinhfigurewidth}{\tudinhimagewidth * \ratio{\columnwidth}{#1}}%
     \includegraphics[width=\tudinhfigurewidth]{#2}
