@@ -4,7 +4,11 @@
     \newcommand{\mynote}[2]{}
 \fi
 
-\PassOptionsToPackage{hyphens}{url}
+\iftudinh@biblatex
+    \relax
+\else
+    \RequirePackage{xurl}
+\fi
 \expandafter\def\csname ver@breakurl.sty\endcsname{}  % prevent loading of breakurl
 \RequirePackage{graphicx}
 \RequirePackage{amsmath}

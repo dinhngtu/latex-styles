@@ -10,6 +10,9 @@
 
 \newcommand{\fakepara}[1]{~\\\textbf{#1}}
 
+\iftudinh@biblatex
+    \usepackage{xurl}
+\fi
 \newcommand{\printbibliography}[0]{\bibliographystyle{IEEEtran}\bibliography{\tudinh@bib}}
 
 % biography hax

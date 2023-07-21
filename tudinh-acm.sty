@@ -8,6 +8,9 @@
 
 \RequirePackage{tudinh-base}
 
+\iftudinh@biblatex
+    \usepackage{xurl}
+\fi
 \newcommand{\printbibliography}[0]{\bibliographystyle{ACM-Reference-Format}\bibliography{\tudinh@bib}}
 
 \expandafter\def\csname ver@breakurl.sty\endcsname{}  % prevent loading of breakurl
