@@ -2,14 +2,9 @@
 \SetupKeyvalOptions{family=tudinh,prefix=tudinh@}
 \DeclareBoolOption{comments}
 \DeclareBoolOption{shortalg}
-\DeclareBoolOption{biblatex}
 \DeclareBoolOption{natbib}
 \DeclareStringOption[bib.bib]{bib}
 \ProcessKeyvalOptions*
-
-\iftudinh@biblatex
-    \PackageError{tudinh-asplos}{biblatex not supported}{biblatex not supported, try natbib instead}
-\fi
 
 \RequirePackage{tudinh-base}
 
@@ -22,8 +17,6 @@
 \fi
 
 \RequirePackage{flushend}
-\RequirePackage{microtype}
-\microtypecontext{spacing=nonfrench}
 \RequirePackage[normalem]{ulem}
 
 %\bibliographystyle{plain}

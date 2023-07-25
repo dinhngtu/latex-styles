@@ -2,13 +2,8 @@
 \SetupKeyvalOptions{family=tudinh,prefix=tudinh@}
 \DeclareBoolOption{comments}
 \DeclareBoolOption{shortalg}
-\DeclareBoolOption{biblatex}
 \DeclareStringOption[bib.bib]{bib}
 \ProcessKeyvalOptions*
-
-\iftudinh@biblatex
-    \PackageError{tudinh-asplos}{biblatex not supported}{biblatex not supported, since natbib is always active}
-\fi
 
 \RequirePackage{tudinh-base}
 
@@ -17,5 +12,3 @@
 \expandafter\def\csname ver@breakurl.sty\endcsname{}  % prevent loading of breakurl
 \RequirePackage[inline,shortlabels]{enumitem}
 \RequirePackage{flushend}
-\RequirePackage{microtype}
-\microtypecontext{spacing=nonfrench}

@@ -2,7 +2,6 @@
 \SetupKeyvalOptions{family=tudinh,prefix=tudinh@}
 \DeclareBoolOption{comments}
 \DeclareBoolOption{shortalg}
-\DeclareBoolOption{biblatex}
 \DeclareStringOption[bib.bib]{bib}
 \ProcessKeyvalOptions*
 
@@ -10,9 +9,6 @@
 
 \newcommand{\fakepara}[1]{~\\\textbf{#1}}
 
-\iftudinh@biblatex
-    \usepackage{xurl}
-\fi
 \newcommand{\printbibliography}[0]{\bibliographystyle{IEEEtran}\bibliography{\tudinh@bib}}
 
 % biography hax
@@ -23,7 +19,6 @@
 \RequirePackage[inline,shortlabels]{enumitem}
 \RequirePackage{flushend}
 \RequirePackage{microtype}
-\microtypecontext{spacing=nonfrench}
 
 \ifCLASSOPTIONcompsoc
   % The IEEE Computer Society needs nocompress option

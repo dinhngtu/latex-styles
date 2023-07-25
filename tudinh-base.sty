@@ -4,17 +4,12 @@
     \newcommand{\mynote}[2]{}
 \fi
 
-\iftudinh@biblatex
-    \relax
-\else
-    \RequirePackage{xurl}
-\fi
 \expandafter\def\csname ver@breakurl.sty\endcsname{}  % prevent loading of breakurl
+\RequirePackage{xurl}
 \RequirePackage{graphicx}
 \RequirePackage{amsmath}
 \RequirePackage{tabularx}
 \RequirePackage{caption}
-\RequirePackage{minitoc}
 \RequirePackage{booktabs}
 \RequirePackage{color}
 \RequirePackage{xcolor}
