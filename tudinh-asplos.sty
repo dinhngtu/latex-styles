@@ -11,7 +11,14 @@
 \iftudinh@natbib
     \RequirePackage[square,numbers]{natbib}
     \RequirePackage{tudinh-natbib}
-    \newcommand{\printbibliography}[0]{\bibliographystyle{plainnat}\bibliography{\tudinh@bib}}
+    \newcommand{\printbibliography}[0]{%
+        \bibliographystyle{plainnat}%
+        \setlength{\bibsep}{\itemsep-0.25em}%
+        \footnotesize%
+        \bibspacing%
+        \vspace{-0.25em}%
+        \bibliography{\tudinh@bib}%
+    }
 \else
     \newcommand{\printbibliography}[0]{\bibliographystyle{plain}\bibliography{\tudinh@bib}}
 \fi
