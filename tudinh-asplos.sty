@@ -3,16 +3,20 @@
 \DeclareBoolOption{comments}
 \DeclareBoolOption{shortalg}
 \DeclareBoolOption{biblatex}
+\DeclareBoolOption{natbib}
 \DeclareStringOption[bib.bib]{bib}
 \ProcessKeyvalOptions*
 
+\iftudinh@biblatex
+    \PackageError{tudinh-asplos}{biblatex not supported}{biblatex not supported, try natbib instead}
+\fi
+
 \RequirePackage{tudinh-base}
 
-\iftudinh@biblatex
-    \RequirePackage[sorting=none,style=trad-plain,maxcitenames=999,sortcites=true]{biblatex}
-    %\usepackage[sorting=none,style=numeric-comp]{biblatex}
-    \addbibresource{\tudinh@bib}
-    \usepackage{xurl}
+\iftudinh@natbib
+    \RequirePackage[square,numbers]{natbib}
+    \RequirePackage{tudinh-natbib}
+    \newcommand{\printbibliography}[0]{\bibliographystyle{plainnat}\bibliography{\tudinh@bib}}
 \else
     \newcommand{\printbibliography}[0]{\bibliographystyle{plain}\bibliography{\tudinh@bib}}
 \fi

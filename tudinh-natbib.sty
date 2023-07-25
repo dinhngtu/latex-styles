@@ -1,0 +1,11 @@
+% natbib cite aliases, stolen from acmart
+\let\citeN\cite
+\let\cite\citep
+\let\citeANP\citeauthor
+\let\citeNN\citeyearpar
+\let\citeyearNP\citeyear
+\let\citeNP\citealt
+\DeclareRobustCommand\citeA
+{\begingroup\NAT@swafalse
+    \let\NAT@ctype\@ne\NAT@partrue\NAT@fullfalse\NAT@open\NAT@citetp}%
+\providecommand\newblock{}%

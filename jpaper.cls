@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{jpaper}[ASPLOS 2023 Submission template]
+\ProvidesClass{jpaper}[ASPLOS 2024 Submission template]
 
 % jpaper provides two modes:
 % In addition to the usual options leqno and fleqn, jpaper also provides the
@@ -36,7 +36,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{verbatim}
-%\RequirePackage{fixltx2e}
+\RequirePackage{fixltx2e}
 \RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
 
 % Basic text typesetting options.
@@ -63,9 +63,9 @@
 \RequirePackage{titling}
 \setlength{\droptitle}{-3.5em}
 
-\pretitle{\begin{center}\vspace{-.5in}
-ASPLOS'23 Submission \#\asplossubmissionnumber -- Confidential Draft -- Do Not Distribute!!\\
-\vspace{.35in}
+\pretitle{
+\begin{center}
+{\footnotesize ASPLOS'24 Submission \#\asplossubmissionnumber -- Confidential Draft -- Do Not Distribute!!\\}
 \normalfont\Large\bfseries}
 \posttitle{\par\end{center}}
 \preauthor{\begin{center}\normalfont\large%
@@ -92,13 +92,15 @@ ASPLOS'23 Submission \#\asplossubmissionnumber -- Confidential Draft -- Do Not D
   {0pt}{}{}
 \titleformat{\subsection}[hang]{\normalfont\bfseries}{\thesubsection. }%
   {0pt}{}{}
-\titleformat{\subsubsection}[runin]{\normalfont\bfseries}{\thesubsubsection. }%
+\titleformat{\subsubsection}[hang]{\normalfont\bfseries}{\thesubsubsection. }%
   {0pt}{}{}
 \newlength{\sectionspace}
-\setlength{\sectionspace}{1.5ex plus 0.25ex}
+%\setlength{\sectionspace}{1.5ex plus 0.25ex}
+\setlength{\sectionspace}{6pt plus 1pt}
 \titlespacing*{\section}{0pt}{\sectionspace}{\sectionspace}
 \titlespacing*{\subsection}{0pt}{\sectionspace}{\sectionspace}
-\titlespacing*{\subsubsection}{0pt}{\parskip}{0.25em plus 0.1em minus 0.05em}
+\titlespacing*{\subsubsection}{0pt}{\sectionspace}{\sectionspace}
+%\titlespacing*{\subsubsection}{0pt}{\parskip}{0.25em plus 0.1em minus 0.05em}
 
 % Compress itemize and enumerate environments.
 \RequirePackage{enumerate}
@@ -123,11 +125,11 @@ ASPLOS'23 Submission \#\asplossubmissionnumber -- Confidential Draft -- Do Not D
 
 % Settings for figures and tables. Figure captions are placed below the figure,
 % while table captions are placed above the table. All captions are sans-serif.
-\RequirePackage[font={normalsize,sf,bf}]{caption}
+\RequirePackage[font={small}]{caption}
 \RequirePackage[position=bottom]{subfig}
 \captionsetup[table]{aboveskip=0.5em, belowskip=0.5em}
-\captionsetup[figure]{aboveskip=0.5em, belowskip=0em}
-\captionsetup[subfloat]{font={small,sf}}
+\captionsetup[figure]{aboveskip=0.5em, belowskip=0.5em}
+\captionsetup[subfloat]{font={small}}
 \setcounter{topnumber}{2}
 \setcounter{dbltopnumber}{2}
 \setcounter{bottomnumber}{2}
@@ -198,7 +200,6 @@ ASPLOS'23 Submission \#\asplossubmissionnumber -- Confidential Draft -- Do Not D
     %linkcolor=black,%
     %urlcolor=black
 }}{}
-
 \RequirePackage{url}
 
 % Scientific units.
