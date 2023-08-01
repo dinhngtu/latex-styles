@@ -9,23 +9,3 @@
 {\begingroup\NAT@swafalse
     \let\NAT@ctype\@ne\NAT@partrue\NAT@fullfalse\NAT@open\NAT@citetp}%
 \providecommand\newblock{}%
-
-% long doi linebreak hax
-\makeatletter
-\def\@doi#1{%
-\let\#\relax
-\let\_\relax
-\let\textless\relax
-\let\textgreater\relax
-\edef\x{\toks0={{\noexpand\nolinkurl{#1}}}}%
-\x
-\edef\#{\@percentchar23}%
-\edef\_{_}%
-\edef\textless{\@percentchar3C}% instead of {\string<} for Apple
-\edef\textgreater{\@percentchar3E}% instead of {\sting>} for Apple
-\edef\x{\toks2={\noexpand\href{\doiurl#1}}}%
-\x
-\edef\x{\endgroup\doitext\the\toks2 \the\toks0}%
-\x
-}
-\makeatother
