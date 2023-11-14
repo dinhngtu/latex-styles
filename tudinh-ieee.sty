@@ -1,14 +1,13 @@
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{family=tudinh,prefix=tudinh@}
 \DeclareBoolOption{comments}
+\DeclareBoolOption{realpara}
 \DeclareBoolOption{shortalg}
 \DeclareBoolOption{natbib}
 \DeclareStringOption[bib.bib]{bib}
 \ProcessKeyvalOptions*
 
 \RequirePackage{tudinh-base}
-
-\newcommand{\fakepara}[1]{~\\\textbf{#1}}
 
 \iftudinh@natbib
     \RequirePackage[square,numbers,sort]{natbib}

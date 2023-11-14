@@ -51,6 +51,12 @@
 \newcommand{\Bemdash}[0]{\discretionary{\textemdash{}}{}{\textemdash{}}}
 \newcommand{\Bsym}[1]{\discretionary{#1}{}{#1}}
 
+\iftudinh@realpara
+    \newcommand{\fakepara}[1]{\paragraph{#1}}
+\else
+    \newcommand{\fakepara}[1]{\vspace{4pt}\noindent\textbf{#1}}
+\fi
+
 \algrenewcommand\algorithmicindent{1em}%
 % New definitions
 \algnewcommand\algorithmicswitch{\textbf{switch}}
