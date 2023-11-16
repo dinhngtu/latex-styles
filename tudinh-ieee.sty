@@ -2,12 +2,20 @@
 \SetupKeyvalOptions{family=tudinh,prefix=tudinh@}
 \DeclareBoolOption{comments}
 \DeclareBoolOption{realpara}
+\DeclareBoolOption{fakepara}
 \DeclareBoolOption{shortalg}
 \DeclareBoolOption{natbib}
 \DeclareStringOption[bib.bib]{bib}
 \ProcessKeyvalOptions*
 
 \RequirePackage{tudinh-base}
+
+\iftudinh@realpara\relax
+\else
+    \iftudinh@fakepara
+        \renewcommand{\paragraph}[1]{\fakepara{#1}}
+    \fi
+\fi
 
 \iftudinh@natbib
     \RequirePackage[square,numbers,sort]{natbib}
