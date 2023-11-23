@@ -18,8 +18,27 @@
 \progressbaroptions{headline=none, frametitle=ckcompliant}
 \RequirePackage{lmodern}
 \RequirePackage{ulem}
-\setbeamersize{text margin left=0em,text margin right=1em}
+\setbeamersize{text margin left=\progressbar@leftbar,text margin right=1em}
+
+\newcommand{\pbtitleadjust}{\,\vspace{.125\textwidth}}
+\newcommand{\pbtitleimage}{\relax}
+\newcommand{\pbtitlefooter}{\relax}
 
 \newcommand{\pbfooterleft}{}
 \newcommand{\pbfooterright}{\insertshortauthor}
-\newcommand{\pbimage}{\,\vspace{.125\textwidth}}
+
+\newlength\pbtitlewidth
+\setlength{\pbtitlewidth}{0.8\textwidth}
+
+\makeatletter
+\newcommand{\pbtitlepage}{%
+    \begin{frame}[plain]%
+        \hspace*{-\progressbar@leftbar}%
+        \advance\textwidth by \progressbar@leftbar\relax%
+        \begin{minipage}{\textwidth}%
+            \hbadness=10000%
+            \maketitle%
+        \end{minipage}%
+    \end{frame}%
+}
+\makeatother

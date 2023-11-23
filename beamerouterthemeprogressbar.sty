@@ -233,13 +233,13 @@
   \ifx\progressbar@titlepage\tempa
   \vfill
   \hskip0ex
-  \parbox{0.8\textwidth}{
+  \parbox{\pbtitlewidth}{
     %\pgfimage[width=.3\textwidth]{\progressbar@imagename}
-    \pbimage
+    \pbtitleadjust\pbtitleimage
   }\hfill
-  \parbox{0.8\textwidth}{
+  \parbox{\pbtitlewidth}{
     \begin{center}
-      {\usebeamerfont{title}\usebeamercolor{title}{\color{fg}\inserttitle}}
+      \parbox{\pbtitlewidth-2\progressbar@leftbar}{\centering\usebeamerfont{title}\usebeamercolor{title}{\color{fg}\inserttitle}}
       \ifx\insertsubtitle\@empty\\[\baselineskip]
       \else{\\\usebeamerfont{subtitle}\usebeamercolor{subtitle}{\color{fg}\insertsubtitle}}\\[\baselineskip]\fi
       \hrule\vskip\baselineskip
@@ -249,6 +249,7 @@
       \else{\usebeamerfont{institute}\usebeamercolor{institute}{\color{fg}\insertinstitute}}\\\fi
       \ifx\insertdate\@empty\ \\
       \else{\usebeamerfont{date}\usebeamercolor{date}{\color{fg}\insertdate}}\\\fi
+     \pbtitlefooter
      \insertlogo
     \end{center}
   }\vfill
