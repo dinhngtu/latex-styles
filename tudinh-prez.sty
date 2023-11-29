@@ -18,7 +18,10 @@
 \progressbaroptions{headline=none, frametitle=ckcompliant}
 \RequirePackage{lmodern}
 \RequirePackage{ulem}
-\setbeamersize{text margin left=\progressbar@leftbar,text margin right=1em}
+
+\newlength{\pbmarginleft}
+\setlength{\pbmarginleft}{1.5\progressbar@leftbar}
+\setbeamersize{text margin left=\pbmarginleft,text margin right=1em}
 
 \newcommand{\pbtitleadjust}{\,\vspace{.125\textwidth}}
 \newcommand{\pbtitleimage}{\relax}
@@ -33,8 +36,8 @@
 \makeatletter
 \newcommand{\pbtitlepage}{%
     \begin{frame}[plain]%
-        \hspace*{-\progressbar@leftbar}%
-        \advance\textwidth by \progressbar@leftbar\relax%
+        \hspace*{-\pbmarginleft}%
+        \advance\textwidth by \pbmarginleft\relax%
         \begin{minipage}{\textwidth}%
             \hbadness=10000%
             \maketitle%
