@@ -1,7 +1,7 @@
 \iftudinh@comments
     \newcommand{\mynote}[2]{\fbox{\bfseries\sffamily\scriptsize{#1}} {\small\textsf{\emph{#2}}}}
 \else
-    \newcommand{\mynote}[2]{}
+    \newcommand{\mynote}[2]{\PackageWarning{tudinh-base}{There are outstanding comments: (#1) #2}}
 \fi
 
 \expandafter\def\csname ver@breakurl.sty\endcsname{}  % prevent loading of breakurl
